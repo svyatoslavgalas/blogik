@@ -1,0 +1,21 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    {{ object.name }}
+{% endblock %}
+
+{% block content %}
+    <div>
+        <b>{{ object.name }}</b>
+        <div>
+            {{ object.content }}
+        </div>
+        <img src="{{ object.cover.url }}" alt="{{ object.name }}">
+        <em>{{ object.pub_date }}</em>
+        <ul>
+            <li><a href="{% url 'post:list' %}">Назад к списку</a></li>
+            <li><a href="{% url 'post:update' object.pk %}">Редактировать</a></li>
+            <li><a href="{% url 'post:delete' object.pk %}">Удалить</a></li>
+        </ul>
+    </div>
+{% endblock %}

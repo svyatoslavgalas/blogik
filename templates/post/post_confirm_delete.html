@@ -1,0 +1,14 @@
+{% extends '_base.html' %}
+
+{% block title %}
+    Подтвердить удаление
+{% endblock %}
+
+{% block content %}
+    <form action="#" method="post">
+        {% csrf_token %}
+        <p>Удаляем?</p>
+        <button type="submit">Да</button>
+        <a href="{% url 'post:list' %}">К списку</a>
+    </form>
+{% endblock %}
